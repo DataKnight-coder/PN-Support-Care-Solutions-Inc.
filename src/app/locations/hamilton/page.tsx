@@ -41,7 +41,8 @@ export default function HamiltonLocationPage() {
       { name: 'Burlington', href: '/locations/burlington' },
       { name: 'Oakville', href: '/locations/oakville' },
       { name: 'Mississauga', href: '/locations/mississauga' }
-    ]
+    ],
+    heroImage: '/images/locations/hamilton.jpg'
   };
 
   return <LocationLayout {...locationData} />;

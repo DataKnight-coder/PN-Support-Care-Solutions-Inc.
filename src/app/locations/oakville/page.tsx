@@ -41,7 +41,8 @@ export default function OakvilleLocationPage() {
       { name: 'Mississauga', href: '/locations/mississauga' },
       { name: 'Burlington', href: '/locations/burlington' },
       { name: 'Milton', href: '/locations/milton' }
-    ]
+    ],
+    heroImage: '/images/locations/oakville.jpg'
   };
 
   return <LocationLayout {...locationData} />;

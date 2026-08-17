@@ -41,7 +41,8 @@ export default function TorontoLocationPage() {
       { name: 'Mississauga', href: '/locations/mississauga' },
       { name: 'Oakville', href: '/locations/oakville' },
       { name: 'Vaughan', href: '/locations/vaughan' }
-    ]
+    ],
+    heroImage: '/images/locations/toronto.jpg'
   };
 
   return <LocationLayout {...locationData} />;

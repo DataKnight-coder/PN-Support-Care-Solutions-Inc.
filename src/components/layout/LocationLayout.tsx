@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { ServiceCard } from '@/components/ui/ServiceCard';
@@ -27,6 +28,7 @@ interface LocationLayoutProps {
   localContext: string;
   faqs: FAQ[];
   nearbyLocations?: { name: string; href: string }[];
+  heroImage?: string;
 }
 
 export const LocationLayout: React.FC<LocationLayoutProps> = ({
@@ -38,12 +40,13 @@ export const LocationLayout: React.FC<LocationLayoutProps> = ({
   whoWeSupportText,
   localContext,
   faqs,
-  nearbyLocations = []
+  nearbyLocations = [],
+  heroImage
 }) => {
   return (
     <>
       {/* Local Hero */}
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${heroImage ? styles.heroWithImage : ''}`}>
         <div className={`container ${styles.heroContainer}`}>
           <div className={styles.heroContent}>
             <span className={styles.eyebrow}>LOCAL CARE SERVICES</span>
@@ -55,6 +58,11 @@ export const LocationLayout: React.FC<LocationLayoutProps> = ({
               </Link>
             </div>
           </div>
+          {heroImage && (
+            <div className={styles.heroImageWrapper}>
+              <Image src={heroImage} alt={`Home care services in ${cityName}`} fill style={{ objectFit: 'cover' }} priority sizes="(max-width: 992px) 100vw, 50vw" />
+            </div>
+          )}
         </div>
       </section>
 

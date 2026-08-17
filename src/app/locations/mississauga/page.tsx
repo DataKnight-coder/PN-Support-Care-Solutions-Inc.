@@ -41,7 +41,8 @@ export default function MississaugaLocationPage() {
       { name: 'Toronto', href: '/locations/toronto' },
       { name: 'Oakville', href: '/locations/oakville' },
       { name: 'Milton', href: '/locations/milton' }
-    ]
+    ],
+    heroImage: '/images/locations/mississauga.jpg'
   };
 
   return <LocationLayout {...locationData} />;
