@@ -51,7 +51,8 @@ export default function LiveInCareService() {
       { title: 'Dementia Care', href: '/services/dementia-care' },
       { title: 'Personal Support', href: '/services/personal-support' },
       { title: 'Companion Care', href: '/services/companion-care' }
-    ]
+    ],
+    heroImage: '/images/services/live-in-care.jpg'
   };
 
   return <ServiceLayout {...serviceData} />;

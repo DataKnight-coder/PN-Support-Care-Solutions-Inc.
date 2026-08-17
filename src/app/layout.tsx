@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { MobileCTABar } from '@/components/layout/MobileCTABar';
+import { BackToTop } from '@/components/ui/BackToTop';
 
 export default function RootLayout({
   children,
@@ -54,6 +55,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <MobileCTABar />
+          <BackToTop />
         </div>
         <script
           type="application/ld+json"

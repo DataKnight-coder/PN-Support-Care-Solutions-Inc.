@@ -21,6 +21,7 @@ interface ServiceLayoutProps {
   approach: string;
   faqs: FAQ[];
   relatedServices?: { title: string; href: string }[];
+  heroImage?: string;
 }
 
 export const ServiceLayout: React.FC<ServiceLayoutProps> = ({
@@ -32,7 +33,8 @@ export const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   benefits,
   approach,
   faqs,
-  relatedServices = []
+  relatedServices = [],
+  heroImage
 }) => {
   return (
     <>
@@ -46,8 +48,8 @@ export const ServiceLayout: React.FC<ServiceLayoutProps> = ({
           </div>
           <div style={{ position: 'relative', width: '100%', aspectRatio: '21/9', marginTop: 'var(--spacing-8)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
             <Image 
-              src="/images/service_banner_1786973054185.jpg" 
-              alt="Comforting bedroom environment" 
+              src={heroImage || "/images/service_banner_1786973054185.jpg"} 
+              alt={title} 
               fill 
               style={{ objectFit: 'cover' }} 
               priority

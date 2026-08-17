@@ -51,7 +51,8 @@ export default function DementiaCareService() {
       { title: 'Respite Care', href: '/services/respite-care' },
       { title: 'Live-in Care', href: '/services/live-in-care' },
       { title: 'Personal Support', href: '/services/personal-support' }
-    ]
+    ],
+    heroImage: '/images/services/dementia-care.jpg'
   };
 
   return <ServiceLayout {...serviceData} />;

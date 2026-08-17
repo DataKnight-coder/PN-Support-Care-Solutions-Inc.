@@ -51,7 +51,8 @@ export default function PalliativeCareService() {
       { title: 'Personal Support', href: '/services/personal-support' },
       { title: 'Respite Care', href: '/services/respite-care' },
       { title: 'Live-in Care', href: '/services/live-in-care' }
-    ]
+    ],
+    heroImage: '/images/services/palliative-care.jpg'
   };
 
   return <ServiceLayout {...serviceData} />;

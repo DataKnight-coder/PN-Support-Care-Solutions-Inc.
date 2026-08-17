@@ -51,7 +51,8 @@ export default function CompanionCareService() {
       { title: 'Personal Support', href: '/services/personal-support' },
       { title: 'Dementia Care', href: '/services/dementia-care' },
       { title: 'Respite Care', href: '/services/respite-care' }
-    ]
+    ],
+    heroImage: '/images/services/companion-care.jpg'
   };
 
   return <ServiceLayout {...serviceData} />;

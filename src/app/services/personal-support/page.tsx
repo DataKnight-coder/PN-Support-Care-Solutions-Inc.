@@ -51,7 +51,8 @@ export default function PersonalSupportService() {
       { title: 'Companion Care', href: '/services/companion-care' },
       { title: 'Live-in Care', href: '/services/live-in-care' },
       { title: 'Post-Hospital Recovery', href: '/services/post-hospital-care' }
-    ]
+    ],
+    heroImage: '/images/services/personal-support.jpg'
   };
 
   return <ServiceLayout {...serviceData} />;
