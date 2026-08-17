@@ -1,0 +1,283 @@
+/* ─── Header Shell ─────────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  transition:
+    background 300ms ease,
+    backdrop-filter 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* On scroll: frosted glass exactly like Floema's subtle reveal */
+.scrolled {
+  background: rgba(253, 251, 247, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 0 rgba(0, 43, 73, 0.06);
+}
+
+/* ─── Inner Container ───────────────────────────────────────────── */
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: var(--spacing-4);
+}
+
+/* ─── Logo ──────────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.logoImage {
+  border-radius: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoPrimary {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  color: var(--color-deep-navy);
+  line-height: 1.1;
+}
+
+.logoSecondary {
+  font-size: 0.65rem;
+  color: var(--color-care-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-family: var(--font-body);
+  margin-top: 1px;
+}
+
+/* ─── Desktop Nav — Floema Pill Style ───────────────────────────── */
+.desktopNav {
+  display: none;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each link is a subtle pill */
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition:
+    border-color 200ms ease,
+    background 200ms ease,
+    color 200ms ease;
+}
+
+.navLink:hover {
+  border-color: rgba(0, 43, 73, 0.18);
+  background: rgba(0, 43, 73, 0.04);
+  color: var(--color-deep-navy);
+}
+
+/* ─── Desktop Actions ───────────────────────────────────────────── */
+.desktopActions {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-4);
+  flex-shrink: 0;
+}
+
+.phoneLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  letter-spacing: 0.01em;
+  transition: color 200ms ease;
+  white-space: nowrap;
+}
+
+.phoneLink:hover {
+  color: var(--color-care-teal);
+}
+
+/* Floema-style filled pill CTA */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: var(--color-deep-navy);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background 220ms ease,
+    transform 180ms ease;
+}
+
+.ctaButton:hover {
+  background: var(--color-care-teal);
+  transform: translateY(-1px);
+}
+
+/* ─── Mobile Actions ────────────────────────────────────────────── */
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.mobilePhoneBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-deep-navy);
+  transition: background 200ms ease;
+}
+
+.mobilePhoneBtn:hover {
+  background: var(--color-soft-aqua);
+}
+
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-deep-navy);
+  transition: background 200ms ease;
+}
+
+.menuToggle:hover {
+  background: var(--color-soft-aqua);
+}
+
+/* ─── Mobile Full-Screen Drawer ─────────────────────────────────── */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  top: 72px;
+  background: var(--color-warm-ivory);
+  padding: var(--spacing-8) var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 280ms ease,
+    transform 280ms ease;
+  z-index: 99;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 7vw, 3rem);
+  color: var(--color-deep-navy);
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 200ms ease, padding-left 200ms ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--color-care-teal);
+  padding-left: var(--spacing-2);
+}
+
+.mobileMenuFooter {
+  padding-top: var(--spacing-8);
+}
+
+.mobileCtaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-radius: 999px;
+  background: var(--color-deep-navy);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: background 220ms ease;
+}
+
+.mobileCtaButton:hover {
+  background: var(--color-care-teal);
+}
+
+/* ─── Breakpoint ────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .desktopNav,
+  .desktopActions {
+    display: flex;
+  }
+
+  .mobileActions {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+}

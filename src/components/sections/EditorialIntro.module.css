@@ -1,0 +1,57 @@
+.section {
+  padding: var(--spacing-24) 0 var(--spacing-20);
+  background: var(--color-warm-ivory);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-16);
+  align-items: end;
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--spacing-20);
+  }
+}
+
+/* Left — large editorial quote */
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-care-teal);
+  white-space: nowrap;
+}
+.eyebrowLine {
+  width: 48px;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.headline {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--color-deep-navy);
+  margin: 0;
+}
+
+/* Right — body copy */
+.description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  margin: 0;
+  padding-top: var(--spacing-2);
+}

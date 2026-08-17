@@ -1,0 +1,178 @@
+.section {
+  padding: var(--spacing-24) 0;
+  background: var(--color-white);
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-care-teal);
+  white-space: nowrap;
+}
+.eyebrowLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  max-width: 60px;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--color-deep-navy);
+  max-width: 700px;
+  margin-bottom: var(--spacing-16);
+}
+
+/* 2-column layout: content left, map right */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-12);
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: var(--spacing-16);
+  }
+}
+
+/* Location cards */
+.locationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+}
+
+@media (min-width: 640px) {
+  .locationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.locationCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-6) var(--spacing-5);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  text-decoration: none;
+  background: var(--color-warm-ivory);
+  transition: border-color 280ms ease,
+              background 280ms ease,
+              transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 280ms ease;
+  overflow: hidden;
+}
+
+.locationCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-care-teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.locationCard:hover {
+  border-color: var(--color-care-teal);
+  background: var(--color-white);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 122, 134, 0.1);
+}
+
+.locationCard:hover::after {
+  transform: scaleX(1);
+}
+
+.locationName {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  color: var(--color-deep-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.locationRegion {
+  font-size: 0.8125rem;
+  color: var(--color-care-teal);
+  font-weight: 500;
+}
+
+/* Right side — map / coverage visual */
+.mapPanel {
+  background: var(--color-soft-aqua);
+  border-radius: 16px;
+  padding: var(--spacing-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  border: 1px solid var(--color-border);
+}
+
+.mapTitle {
+  font-size: 1.25rem;
+  color: var(--color-deep-navy);
+  letter-spacing: -0.02em;
+}
+
+.mapDescription {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.coverageNote {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--color-white);
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.coverageDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-care-teal);
+  flex-shrink: 0;
+}
+
+.coverageText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-deep-navy);
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-care-teal);
+  text-decoration: none;
+  transition: gap 200ms ease;
+}
+.viewAllLink:hover { gap: 10px; }

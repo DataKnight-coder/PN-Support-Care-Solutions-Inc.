@@ -1,0 +1,42 @@
+.breadcrumbs {
+  padding: var(--spacing-4) 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 0.875rem;
+}
+
+.link {
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.link:hover {
+  color: var(--color-care-teal);
+  opacity: 1;
+}
+
+.separator {
+  color: var(--color-border);
+}
+
+.current {
+  color: var(--color-deep-navy);
+  font-weight: 500;
+}

@@ -1,0 +1,146 @@
+.footer {
+  background-color: var(--color-deep-navy);
+  color: var(--color-soft-aqua);
+  padding: var(--spacing-16) 0 var(--spacing-8);
+  margin-top: var(--spacing-20);
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-10);
+  margin-bottom: var(--spacing-16);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+/* Column 1: Brand */
+.logo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-4);
+}
+
+.logoPrimary {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.logoSecondary {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-care-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.brandDescription {
+  color: var(--color-soft-aqua);
+  margin-bottom: var(--spacing-6);
+  max-width: 280px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.phoneLink {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.phoneLink:hover {
+  color: var(--color-care-teal);
+}
+
+/* Other Columns */
+.columnTitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-4);
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.linkList a {
+  color: var(--color-soft-aqua);
+  font-size: 0.9375rem;
+  opacity: 0.85;
+}
+
+.linkList a:hover {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.legalLinks {
+  display: flex;
+  gap: var(--spacing-6);
+  font-size: 0.875rem;
+}
+
+.legalLinks a {
+  color: var(--color-soft-aqua);
+  opacity: 0.7;
+}
+
+.legalLinks a:hover {
+  opacity: 1;
+  color: var(--color-white);
+}

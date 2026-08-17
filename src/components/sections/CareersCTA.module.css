@@ -1,0 +1,118 @@
+.section {
+  padding: var(--spacing-24) 0;
+  background: var(--color-warm-ivory);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+}
+
+/* Left: content */
+.content {
+  padding: var(--spacing-12) var(--spacing-10);
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding: var(--spacing-16) var(--spacing-16);
+  }
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-care-teal);
+  display: block;
+  margin-bottom: var(--spacing-4);
+}
+
+.headline {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--color-deep-navy);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-4);
+}
+
+.description {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-charcoal);
+  opacity: 0.75;
+  margin-bottom: var(--spacing-8);
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  font-weight: 500;
+}
+
+.benefits li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-care-teal);
+  flex-shrink: 0;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  background: var(--color-deep-navy);
+  color: var(--color-white);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-decoration: none;
+  width: fit-content;
+  transition: background 250ms ease, transform 200ms ease;
+}
+.ctaLink:hover {
+  background: var(--color-care-teal);
+  transform: translateY(-2px);
+}
+
+/* Right: image */
+.imagePanel {
+  position: relative;
+  min-height: 300px;
+}
+
+.image {
+  object-fit: cover;
+}

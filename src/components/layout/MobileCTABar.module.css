@@ -1,0 +1,60 @@
+.mobileCTABar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  z-index: 40;
+  padding: var(--spacing-3) var(--container-padding-mobile);
+  padding-bottom: calc(var(--spacing-3) + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .mobileCTABar {
+    display: none;
+  }
+}
+
+.container {
+  display: flex;
+  gap: var(--spacing-3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.callButton, .consultButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: var(--spacing-3) var(--spacing-2);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.callButton {
+  gap: var(--spacing-2);
+  background-color: var(--color-soft-aqua);
+  color: var(--color-deep-navy);
+  border: 1px solid transparent;
+}
+
+.callButton:active {
+  background-color: var(--color-border);
+}
+
+.consultButton {
+  background-color: var(--color-care-teal);
+  color: var(--color-white);
+  border: 1px solid var(--color-care-teal);
+}
+
+.consultButton:active {
+  background-color: var(--color-care-teal-hover);
+}

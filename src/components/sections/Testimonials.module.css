@@ -1,0 +1,120 @@
+.section {
+  background: var(--color-deep-navy);
+  padding: var(--spacing-24) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0,122,134,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-care-teal);
+  white-space: nowrap;
+}
+.eyebrowLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  max-width: 60px;
+}
+
+.headline {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--color-white);
+  max-width: 600px;
+  margin-bottom: var(--spacing-16);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-5);
+}
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  transition: background 300ms ease, border-color 300ms ease, transform 300ms ease;
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(0,122,134,0.4);
+  transform: translateY(-4px);
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star {
+  color: #FFB800;
+}
+
+.quoteIcon {
+  color: var(--color-care-teal);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.quote {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.8);
+  font-style: italic;
+  flex: 1;
+  margin: 0;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--spacing-4);
+  gap: 2px;
+}
+
+.name {
+  font-weight: 600;
+  color: var(--color-white);
+  font-size: 0.9375rem;
+}
+
+.meta {
+  font-size: 0.8125rem;
+  color: var(--color-care-teal);
+  font-weight: 500;
+}

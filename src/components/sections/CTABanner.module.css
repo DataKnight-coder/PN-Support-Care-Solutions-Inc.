@@ -1,0 +1,177 @@
+/* ─── Premium CTABanner ─── */
+.section {
+  padding: var(--spacing-24) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Variant: primary (teal) */
+.variant-primary {
+  background: linear-gradient(135deg, var(--color-care-teal) 0%, #005a64 100%);
+}
+
+/* Variant: secondary (deep navy) */
+.variant-secondary {
+  background: linear-gradient(135deg, var(--color-deep-navy) 0%, #001a2e 100%);
+}
+
+/* Variant: light (soft cream) */
+.variant-light {
+  background: var(--color-soft-aqua);
+}
+
+/* Noise texture overlay for premium feel */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-10);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-16);
+  }
+}
+
+.content {}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-4);
+}
+
+.variant-primary .label,
+.variant-secondary .label {
+  color: rgba(255,255,255,0.55);
+}
+
+.variant-light .label {
+  color: var(--color-care-teal);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-4);
+}
+
+.variant-primary .title,
+.variant-secondary .title {
+  color: var(--color-white);
+}
+
+.variant-light .title {
+  color: var(--color-deep-navy);
+}
+
+.description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.variant-primary .description,
+.variant-secondary .description {
+  color: rgba(255,255,255,0.65);
+}
+
+.variant-light .description {
+  color: var(--color-charcoal);
+  opacity: 0.8;
+}
+
+/* Action area */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+  flex-shrink: 0;
+  min-width: 220px;
+}
+
+@media (min-width: 900px) {
+  .actions {
+    align-items: flex-end;
+  }
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 250ms ease;
+  letter-spacing: 0.01em;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+.variant-primary .primaryBtn,
+.variant-secondary .primaryBtn {
+  background: var(--color-white);
+  color: var(--color-deep-navy);
+}
+
+.variant-primary .primaryBtn:hover,
+.variant-secondary .primaryBtn:hover {
+  background: #f0f9fa;
+}
+
+.variant-light .primaryBtn {
+  background: var(--color-deep-navy);
+  color: var(--color-white);
+}
+
+.variant-light .primaryBtn:hover {
+  background: var(--color-care-teal);
+}
+
+.secondaryAction {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 200ms ease;
+  padding: var(--spacing-2) 0;
+}
+
+.variant-primary .secondaryAction,
+.variant-secondary .secondaryAction {
+  color: rgba(255,255,255,0.65);
+}
+
+.variant-primary .secondaryAction:hover,
+.variant-secondary .secondaryAction:hover {
+  color: rgba(255,255,255,1);
+}
+
+.variant-light .secondaryAction {
+  color: var(--color-care-teal);
+}

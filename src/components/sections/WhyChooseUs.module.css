@@ -1,0 +1,127 @@
+.section {
+  padding: var(--spacing-24) 0;
+  background: var(--color-warm-ivory);
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-care-teal);
+  white-space: nowrap;
+}
+.eyebrowLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  max-width: 80px;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--color-deep-navy);
+  max-width: 700px;
+  margin-bottom: var(--spacing-8);
+}
+
+.description {
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  color: var(--color-charcoal);
+  max-width: 600px;
+  opacity: 0.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-16);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: var(--spacing-8);
+  position: relative;
+  overflow: hidden;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 350ms ease;
+  cursor: default;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-care-teal), var(--color-deep-navy));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 43, 73, 0.1);
+  border-color: transparent;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.cardNumber {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--color-border);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: var(--spacing-6);
+  display: block;
+  transition: color 300ms ease;
+}
+
+.card:hover .cardNumber {
+  color: var(--color-soft-aqua);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: var(--color-deep-navy);
+  margin-bottom: var(--spacing-3);
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-charcoal);
+  opacity: 0.75;
+  margin: 0;
+}
+
+.footer {
+  margin-top: var(--spacing-12);
+  display: flex;
+  justify-content: center;
+}

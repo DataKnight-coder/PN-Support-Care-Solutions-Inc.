@@ -1,0 +1,103 @@
+/* ─── Premium Button System ─── */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 180ms ease,
+    box-shadow 220ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Subtle shine on hover for primary/secondary */
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), transparent);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.button:hover::after {
+  opacity: 1;
+}
+
+/* ─── Variants ─── */
+.variant-primary {
+  background: var(--color-care-teal);
+  color: var(--color-white);
+  border: 2px solid var(--color-care-teal);
+}
+.variant-primary:hover:not(:disabled) {
+  background: #009aaa;
+  border-color: #009aaa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 122, 134, 0.3);
+}
+
+.variant-secondary {
+  background: var(--color-deep-navy);
+  color: var(--color-white);
+  border: 2px solid var(--color-deep-navy);
+}
+.variant-secondary:hover:not(:disabled) {
+  background: #001a2e;
+  border-color: #001a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 43, 73, 0.25);
+}
+
+.variant-outline {
+  background: transparent;
+  color: var(--color-deep-navy);
+  border: 2px solid var(--color-deep-navy);
+}
+.variant-outline:hover:not(:disabled) {
+  background: var(--color-deep-navy);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.variant-ghost {
+  background: transparent;
+  color: var(--color-care-teal);
+  border: 2px solid transparent;
+}
+.variant-ghost:hover:not(:disabled) {
+  background: var(--color-soft-aqua);
+}
+
+/* ─── Sizes ─── */
+.size-sm {
+  padding: 8px 18px;
+  font-size: 0.8125rem;
+}
+.size-md {
+  padding: 11px 24px;
+  font-size: 0.9375rem;
+}
+.size-lg {
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+.fullWidth {
+  width: 100%;
+}

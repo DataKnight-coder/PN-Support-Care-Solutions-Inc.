@@ -1,0 +1,68 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-warm-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  height: 100%;
+}
+
+.card:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-care-teal);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+.iconWrapper {
+  color: var(--color-deep-navy);
+  margin-bottom: var(--spacing-4);
+  background-color: var(--color-soft-aqua);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.card:hover .iconWrapper {
+  background-color: var(--color-care-teal);
+  color: var(--color-white);
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-3);
+  color: var(--color-deep-navy);
+  transition: color var(--transition-fast);
+}
+
+.card:hover .title {
+  color: var(--color-care-teal);
+}
+
+.description {
+  color: var(--color-charcoal);
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-6);
+  flex: 1; /* Pushes action to bottom */
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--color-care-teal);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.card:hover .action {
+  gap: var(--spacing-3); /* Slight arrow movement on hover */
+}
