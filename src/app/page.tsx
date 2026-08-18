@@ -11,6 +11,7 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { JournalPreview } from '@/components/sections/JournalPreview';
 import { CareersCTA } from '@/components/sections/CareersCTA';
 import { CTABanner } from '@/components/sections/CTABanner';
+import { ExplainerVideo } from '@/components/sections/ExplainerVideo';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <EditorialIntro />
+      <ExplainerVideo />
       <FeaturedServices />
       <WhoWeSupport />
       <FeaturedStory />
