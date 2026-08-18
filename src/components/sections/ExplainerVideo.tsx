@@ -10,8 +10,8 @@ export const ExplainerVideo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
-  // We will replace this with the HeyGen video URL when provided
-  const placeholderVideo = "https://cdn.coverr.co/videos/coverr-a-woman-taking-care-of-an-elderly-man-4836/1080p.mp4";
+  // Replaced placeholder with the actual HeyGen explainer video
+  const placeholderVideo = "/videos/pn-support-care-explainer.mp4";
 
   const togglePlay = (e: React.MouseEvent) => {
     e.stopPropagation();
