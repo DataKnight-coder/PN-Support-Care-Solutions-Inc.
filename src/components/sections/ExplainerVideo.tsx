@@ -16,12 +16,13 @@ export const ExplainerVideo = () => {
   const togglePlay = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
+      if (videoRef.current.paused) {
+        videoRef.current.play().catch(error => {
+          console.error("Video play failed:", error);
+        });
       } else {
-        videoRef.current.play();
+        videoRef.current.pause();
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -56,6 +57,8 @@ export const ExplainerVideo = () => {
               playsInline
               poster="/images/about_hero.jpg"
               onClick={togglePlay}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
             />
             
             <div className={`${styles.playOverlay} ${isPlaying ? styles.playing : ''}`}>
