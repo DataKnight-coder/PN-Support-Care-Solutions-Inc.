@@ -55,7 +55,6 @@ export const ExplainerVideo = () => {
               className={styles.videoElement}
               loop
               playsInline
-              poster="/images/about_hero.jpg"
               onClick={togglePlay}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
